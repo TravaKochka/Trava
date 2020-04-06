@@ -1,0 +1,16 @@
+ public class Waiter{
+  private Waiter()
+    {
+    }
+
+    public static WebElement waitForElementToBeClickable(WebElement webElement)
+    {
+        return waitForElementToBeClickable(webElement, WAIT_TIMEOUT_SECONDS);
+    }
+
+    public static WebElement waitForElementToBeClickable(By by, int timeoutSeconds)
+    {
+        return new WebDriverWait(getDriver(), timeoutSeconds).until(
+            ExpectedConditions.elementToBeClickable(by));
+    }
+    }
